@@ -1,0 +1,5 @@
+#
+# Create Schedule table 
+#
+from cmn_classes import db, Schedule
+db.metadata.create_all(db.engine, tables = [Schedule.__table__])

@@ -1,0 +1,366 @@
+@import url('http://fonts.googleapis.com/css?family=Lobster');
+@import url('http://fonts.googleapis.com/css?family=Roboto');
+@import url('http://fonts.googleapis.com/css?family=Molengo');
+/*PALETTE
+# http://www.colourlovers.com/palette/96621/bed_of_leaves
+# http://www.colourlovers.com/palette/152862/Autumn_Foliage
+DEDD83  222,221,131, 0.2
+header = rgba(120,144,72,0.7)
+94AA28 148,170,40
+7C683C  124,104,60
+A08F6B  160,143,107
+D8D39B  216,211,155*/
+
+/* 
+ .dark-primary-color    { background: #00796B; }
+.default-primary-color { background: #009688; }
+.light-primary-color   { background: #B2DFDB; }
+.text-primary-color    { color: #FFFFFF; }
+.accent-color          { background: #FF5722; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #727272; }
+.divider-color         { border-color: #B6B6B6; }
+.shadow grey 757575
+*/
+
+body {
+    background-color: #e0f2f1 ;
+    font-family: "Roboto";
+    font-size: 15px;
+    color : #212121;
+}
+
+/* HEADER */
+header {
+    background-color: #009688;
+    height : 35px;
+    width: 100%;
+    margin-bottom: 10px;    
+    margin: 0 auto;
+	box-shadow: 2px 2px 4px #616161;
+}
+
+
+header h1.logo {
+   color: white;
+   font-family: "Lobster";
+   font-size: 1.7em;
+   margin: 0px 0px 0px 0px;
+   float: left;
+   padding: 0px 0px 0px 10px;
+   text-shadow: 4px 4px 4px #00796B;
+}
+
+/* Menu */
+.menu {
+   font-family: "Molengo";
+   font-weight: bolder;
+   float: right;
+   margin-top: 5px;
+   padding: 0 15px 0 0;
+   text-shadow: 4px 4px 4px #00796B
+}
+
+.menu li {
+   display: inline;
+}
+
+.menu li + li {
+   margin-left: 10px;    
+}
+
+.menu li a {
+   text-decoration: none;
+   color:  white;
+   padding:0!important;
+}
+
+.menu li a:hover {
+   padding-bottom: 12px;
+   padding:0!important;
+   color: #FF5722;
+};
+  
+/* LINKS */
+a {
+   text-decoration: none;
+   color: #00796B;
+   padding:0!important;
+}
+
+ a:hover {
+   margin-top: -2px;
+   padding-bottom: 12px;
+   padding:0!important;
+}
+
+
+.container {
+   width: 900px;
+   min-height: 400px;
+   margin: 0 auto;
+   position:relative;
+   top:30px;
+   
+}
+.content {
+   clear: both;
+   display: block;
+  margin-left: auto;
+  margin-right: auto;
+   padding: 0px 10px 0px 10px; 
+   text-align: center;
+ }
+
+.footer .footer_el {
+	width:100%;
+	height:80px;
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+
+/* Table */
+.tbl {
+   text-align: center;
+   width: 100%;
+   background-color: white ;
+   margin: 5px;
+   padding: 0px;
+   border-collapse: collapse; 
+   border-spacing: 0;
+   border-bottom: 2px solid #009688;
+   box-shadow: 2px 2px 4px #616161;
+}
+
+.firstcol { width: 380px; }
+
+.secondcol { width 100px; }
+
+.tbl th {
+   font-size: 1.1em;
+   background-color: #009688;
+   height : 35px;
+   font-family: "Molengo";
+   font-weight: bolder;
+   color: white;
+   text-align: center;
+   padding: auto;
+   word-wrap: break-word
+   vertical-align: middle;
+   text-shadow: 2px 2px 4px #00796B;
+}
+
+.tbl th.session { width:10%; }
+.tbl th.week { width:15%; }
+.tbl th.homecol { width:45%; }
+.tbl th.date { width:15%; }
+.tbl th.vote { width:5%; }
+.tbl th.schedulecol { width:10%; }
+
+.tbl tr:nth-child(even) {background: #efebe9; color: #212121;}
+.tbl tr:nth-child(odd) {background: white}
+
+.tbl td {
+   text-align: center;
+   padding: 4px;
+   word-wrap: break-word;
+   vertical-align: middle;
+   font-size: 0.9em;
+}
+
+.tbl th[data-sort]{
+	cursor: pointer;
+}
+
+.tbl a {
+   color: #009688;
+   text-decoration: none;
+   padding:0!important;
+
+}
+
+.tbl a:hover {
+   color: #FF5722;
+}
+
+.section {
+	color: #00796B;
+    font-weight: bolder;
+	font-family: "Molengo";
+	font-size: 1em;
+}
+
+
+.formlabel {
+	text-align: center;
+	padding:0!important;
+}
+
+input[type=text], input[type=password] {
+    text-align: center;
+    border:2px solid #009688;
+    border-radius:10px;
+    height: 22px;
+    width: 230px;
+}
+
+button, input[type=submit] {
+    background:none!important;
+     border:none; 
+     padding: 5px 0px 0px 0px;
+    /*border is optional*/
+     cursor: pointer;
+     color:  #00796B;
+     font-weight: bold;
+}
+
+button:hover, input[type=submit]:hover {
+    background:none!important;
+    border:none; 
+    cursor: pointer;
+    font-weight: bold;
+	color: #FF5722;
+}
+
+.tab_button {
+	vertical-align: center;
+}
+
+
+.error {
+	color: red;
+	font-weight: bold;
+}
+
+.success {
+	font-family: "L";
+	color: #00796B;
+	font-weight: bold;
+	
+}
+
+/* Table */
+.schedule {
+   text-align: center;
+   width: 100%;
+   background-color: white ;
+   margin: 0px;
+   padding: 10px;
+   border-collapse: collapse; border-spacing: 0
+   border-top: 2px solid #009688;
+   box-shadow: 2px 2px 4px #616161;
+}
+
+.schedule th {
+   font-size: 1.1em;
+   background-color: #009688;
+   height : 35px;
+   font-family: "Molengo";
+   font-weight: bolder;
+   color: white;
+   text-align: center;
+   padding: auto;
+   word-wrap: break-word
+   vertical-align: middle;
+   text-shadow: 2px 2px 4px #00796B;
+}
+
+.schedule tfoot {
+   font-size: 1.1em;
+   border-top: 3px solid #009688;
+   font-family: "Molengo";
+   color: #00796B;
+   text-align: center;
+   padding: 4px;
+   word-wrap: break-word:
+   vertical-aligpn: middle;
+}
+
+.schedule_green {
+   background: rgba(0,100,0,0.5);
+   color: rgba(0,100,0,1);
+}
+
+.schedule_red {
+   background: rgba(100,0,0,0.5);
+   color: rgba(100,0,0,1) ;
+}
+
+.schedule_gold {
+	background: rgba(255, 215, 0, 0.5);
+	color: rgba(254, 157, 4,1);
+	
+}
+
+.schedule td {
+   text-align: center;
+   padding: 4px;
+   word-wrap: break-word;
+   vertical-align: middle;
+
+}
+
+
+.calendar ul{
+    list-style-type:none;
+}
+.calendar label {  
+    display: inline-block;  
+    cursor: pointer;  
+    position: relative;  
+    padding-left: 25px;  
+    margin-right: 15px;  
+    font-size: 13px;  
+	text-align: left;
+	vertical-align: middle;
+	width: 20px; 
+	float: right; 
+	
+} 
+
+.calendar input[type=radio] {  
+    display: none;  
+	text-align: right;
+	width: 20px; 
+	float: right; 
+
+}  
+
+.calendar label:before {  
+    content: "";  
+    display: inline-block;  
+  
+    width: 16px;  
+    height: 16px;  
+    text-align: left;
+    margin-right: 10px;  
+    position: absolute;  
+    left: 0;  
+    bottombottom: 1px;  
+    background-color: #aaa;  
+    box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8); 
+	float: right; 
+
+}  
+
+.calendar label:before {  
+    border-radius: 8px;  
+	float: right; 
+
+}  
+
+.calendar input[type=radio]:checked + label:before {  
+    content: "\2022";  
+    color: #f3f3f3;  
+    font-size: 30px;  
+    text-align: center;  
+    line-height: 18px;  
+
+	float: right; 
+
+}  
+
+.last_update {
+	font-size: 0.8em;
+}

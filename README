@@ -1,0 +1,21 @@
+#
+# Init DB (Only first time!!!)
+#
+
+# --- Add users 
+#python bin/initUsers.py -d
+# --- Add rest of tables (Movies, Sessions, Votes)
+#python bin/initDB.py -d
+# --- Start IMDB import
+#python bin/initIMDB.py -f data/omdb.clean.txt
+
+
+# From now on, when website is active... use this
+
+#
+# Make a dump fo DB
+# 
+
+#
+# Reload database (no users, never users)
+# 

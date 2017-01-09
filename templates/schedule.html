@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<table class="schedule">
+	<th></th>
+ 	{% for day in weekdays %}
+		<th>{{ day[0] }}<br/>{{day[1]}}</th>
+ 	{% endfor %}
+ 	<th>Last Update</th>
+{% for user in users_update %}
+		<tr>
+			<td>{{ user[0][0] }}</td>
+			{% for i in users[user[0]] %}
+		 		{% if i == "Y" %}
+		   			<td class="schedule_green">{{i}}</td>
+		 		{% elif i == "N" %}
+		   			<td class="schedule_red">{{i}}</td>
+		   			
+				{% elif i == "?" %}
+					<td class="schedule_gold">{{i}}</td>
+		 		{% else %}
+		   			<td>{{i[0]}}</td>
+         		{% endif %}
+			{% endfor %}
+			<td class="last_update" >{{ user[1] }}</td>
+		</tr>	
+{% endfor %}
+<tr>
+<tfoot>
+<td>Summary</td>
+{% for i in total %}
+		{% if i == maxs and i > 0 %}
+			<td class="schedule_green">{{i}}</td>
+	    {% else %}
+			<td>{{i}}</td>
+	    {% endif %}
+{% endfor %}
+</tr>
+</tfoot>
+</table>
+
+{% if editflag %}
+<br><br>
+<form method="post">
+	{{ calendar.csrf_token }}   
+	<table class="schedule">
+		<th></th>
+		{% for day in weekdays %}
+			<th>{{ day[0] }}<br/>{{day[1]}}</th>
+		{% endfor %}
+	<tr>
+		{% for field in calendar %}
+			<td class="calendar">{{field}}</td>
+		{% endfor %}
+		
+	</tr>
+</table>
+</br>
+<input type="submit" name="btn" class="tab_button" value="Update">
+</form>
+{% endif %}
+
+{% endblock %}
+
+

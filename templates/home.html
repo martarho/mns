@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="stuff">
+        <table class="tbl">
+        <thead>
+        <tr> 
+            <th class="session">Session</th>
+            <th class="week">Week</th>
+            <th class="homecol" >Movie</th>
+            <th class="date">Date</th>
+            <th class="vote">Vote</th>
+            <th class="schedulecol">Schedule</th>
+        </tr> 
+        </thead>
+        <tbody>
+        {% for session in sessions %}
+        <tr>
+            <td>{{ session.id }}</td>
+            <td>{{ session.week }}</td>
+            <td class="secondcol">{{ session.get_movie_title() }}</td>
+            <td>{{ session.date }}</td>
+            <td>
+            {% if session.status %}
+                 <a href="{{ url_for('session', sid=session.id) }}">Vote</a>
+            {% else %}
+                 Closed
+            {% endif %} 
+            </td>
+            <td> <a href="{{ url_for('schedule', sid=session.id) }}">Go</a> </td>
+                
+        </tr>
+        {% endfor %}
+		</tbody>
+        </table>
+    
+    <br><br>
+    </div>
+    <!-- Stuff-->
+{% endblock %}

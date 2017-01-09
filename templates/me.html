@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="stuff">
+    
+        <p>You are logged as <div style="font-weight:bold">{{ u.username }}</div></p>
+		<p>Your current email is <div style="font-weight:bold">{{ u.email }}</div></p>
+		
+		<br/>
+        <div class="section">Update password</div>
+        {% from "_formhelper.html" import render_field %}
+		<form method=post action="">
+		{{pform.csrf_token}}
+		<dl>
+			{{ render_field(pform.oldpassword) }}
+			{{ render_field(pform.password) }}
+			{{ render_field(pform.confirm) }}
+		</dl>
+		<p><input type=submit name="btn" value="Update password">
+		</form>
+		
+		<br><br>
+
+		<div class="section">Update email</div>
+		<form method=post action="">
+		{{eform.csrf_token}}
+		<dl>
+			{{ render_field(eform.oldemail) }}
+			{{ render_field(eform.email) }}
+		</dl>
+		<p><input type=submit name="btn" value="Update email"></p>
+		</form>
+		<br/>
+		<div class="success"> {{ errmsg }} </div>
+		
+   </div>
+{% endblock %}

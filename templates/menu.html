@@ -1,0 +1,16 @@
+<div class="menu">
+    {% if g.user.is_authenticated() %}
+    <ul class="menu">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('me') }}">Me</a></li>
+        <li><a href="{{ url_for('stats') }}">Statistics</a></li>
+        <li><a href="{{ url_for('FAQ') }}">FAQ</a></li>
+	<li><a href="{{ url_for('logout') }}">Logout</a></li>
+    </ul>
+    {% endif %}
+    {% if not g.user.is_authenticated() %}
+    <ul class="menu">
+        <li><a href="{{ url_for('login') }}">Login</a></li>
+    </ul>
+    {% endif %}
+</div>

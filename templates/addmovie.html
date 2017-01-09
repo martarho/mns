@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block content %}
+{% from "_formhelper.html" import render_field %}
+    <div class="stuff">
+			<form action="" method="post" name="search">
+				{{ sform.csrf_token }}
+			<p class="section"> Add Movie (IMDB search form) </p>     
+				{{ sform.search }}
+			<br>
+			<input type="submit" name="btn" value="Search">
+			<input type="submit" name="btn" value="Clear">
+			</form><br>
+			{% if omdb %}
+			<table class="tbl">
+			<tr> 
+				<th>Title</th>
+				<th>Year</th>
+				<th>Add</th>
+			</tr> 
+			{% for movie in omdb %}
+			<tr class="tab">
+				<td> <a href="http://www.imdb.com/title/{{ movie.id }}" target="_blank">{{ movie.title }}</a></td>
+				<td> {{ movie.year }}</td>
+				<td>
+				<form action="" method="post" name="add" >
+						{{ aform.csrf_token}}
+						{{ aform.title(value= movie.title ) }}
+						{{ aform.imdbid(value= movie.id) }}
+						<input type="submit" name="btn" value="Add">
+				</form>
+					
+				</td>
+			</tr>
+			{% endfor %}
+			</table>
+			{% endif %} 
+		<!-- END IF vote -->
+		<br>
+		<!-- MOVIE TABLE -->
+        <table class="tbl">
+	<thead>
+        <tr> 
+            <th data-sort="string" class="firstcol">Movie</th>
+            <th data-sort="string">Suggested on</th>
+            <th data-sort="string">By</th>
+            <th data-sort="int" data-sort-default="desc">Times chosen</th>
+            <th data-sort="int" data-sort-default="desc">Votes</th>
+            {% if vote %}
+				<th>Vote for it!</th>
+		    {% endif %}
+        </tr> 
+	</thead>
+        {% for movie in movies %}
+        <tr>
+            <td class="firstcol"><a href="http://www.imdb.com/title/{{ movie.imdbid }}" target="_blank">{{ movie.title }}</a></td>
+            <td>{{ movie.date }}</td>
+            <td>{{ movie.get_username() }}</td>
+            <td>{{ movie.times_seen() }}</td>
+            <td>{{ movie.count_votes() }}</td>
+        </tr>
+        {% endfor %}
+		</table>
+		<br><br>
+    
+    
+   </div> <!-- Div Stuff ends -->
+    
+{% endblock %}
